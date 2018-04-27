@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel.cs" />
     <Page Include="Images.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,12 +67,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Command.cs" />
+    <Compile Include="GestureToImageSourceConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +107,12 @@
     <Resource Include="Images\rock80.png" />
     <Resource Include="Images\scissors80.png" />
     <Resource Include="Images\spock80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RockPaperScissors.Logic\RockPaperScissors.Logic.csproj">
+      <Project>{A6B21001-A4CB-4BD5-9F50-E12C7F0CB39C}</Project>
+      <Name>RockPaperScissors.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
