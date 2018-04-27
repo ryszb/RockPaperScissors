@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RockPaperScissors.UI">
+    <ImageSource x:Key="RockIcon">Images/rock80.png</ImageSource>
+    <ImageSource x:Key="PaperIcon">Images/paper80.png</ImageSource>
+    <ImageSource x:Key="ScissorsIcon">Images/scissors80.png</ImageSource>
+    <ImageSource x:Key="LizardIcon">Images/lizard80.png</ImageSource>
+    <ImageSource x:Key="SpockIcon">Images/spock80.png</ImageSource>
+</ResourceDictionary>
