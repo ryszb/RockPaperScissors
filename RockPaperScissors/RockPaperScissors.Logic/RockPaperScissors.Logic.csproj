@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ComputerPlayer.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Gesture.cs" />
     <Compile Include="HumanPlayer.cs" />
     <Compile Include="IRandomNumberGenerator.cs" />

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ComputerPlayerTests.cs" />
     <Compile Include="FakeRandomNumberGenerator.cs" />
+    <Compile Include="GameTests.cs" />
     <Compile Include="GestureTests.cs" />
     <Compile Include="HumanPlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
