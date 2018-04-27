@@ -46,9 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComputerPlayerTests.cs" />
+    <Compile Include="FakeRandomNumberGenerator.cs" />
     <Compile Include="GestureTests.cs" />
+    <Compile Include="HumanPlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundTests.cs" />
+    <Compile Include="TacticalComputerPlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
