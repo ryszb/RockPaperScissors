@@ -6,7 +6,7 @@ namespace RockPaperScissors.Logic
     {
         public int GenerateRandomNumber(int minValue, int maxValue)
         {
-            var random = new Random();
+            var random = new Random(Guid.NewGuid().GetHashCode());
 
             return random.Next(minValue, maxValue);
         }
