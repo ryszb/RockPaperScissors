@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
+using RockPaperScissors.Logic.Common;
 
-using static RockPaperScissors.Logic.RoundResult;
-
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Core
 {
     public class Round : ValueObject<Round>
     {
@@ -20,15 +19,15 @@ namespace RockPaperScissors.Logic
         {
             if (PlayerOneGesture > PlayerTwoGesture)
             {
-                return PlayerOneWins;
+                return RoundResult.PlayerOneWins;
             }
 
             if (PlayerOneGesture < PlayerTwoGesture)
             {
-                return PlayerTwoWins;
+                return RoundResult.PlayerTwoWins;
             }
 
-            return Draw;
+            return RoundResult.Draw;
         }
 
         protected override IEnumerable<object> GetEqualityComponents()

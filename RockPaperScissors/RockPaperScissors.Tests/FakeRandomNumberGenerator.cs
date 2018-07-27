@@ -1,4 +1,5 @@
 ﻿using RockPaperScissors.Logic;
+using RockPaperScissors.Logic.Utils;
 
 namespace RockPaperScissors.Tests
 {

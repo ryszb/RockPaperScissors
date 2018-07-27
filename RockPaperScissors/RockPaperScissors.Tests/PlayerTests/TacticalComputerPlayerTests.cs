@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-
 using NUnit.Framework;
-
 using RockPaperScissors.Logic;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Players;
 
-using static RockPaperScissors.Logic.Gesture;
-
-namespace RockPaperScissors.Tests
+namespace RockPaperScissors.Tests.PlayerTests
 {
     [TestFixture]
     public class TacticalComputerPlayerTests
@@ -17,13 +15,13 @@ namespace RockPaperScissors.Tests
             var tacticalComputerPlayer = new TacticalComputerPlayer(
                 new List<Gesture>
                 {
-                    Rock,
-                    Paper,
-                    Scissors
+                    Gesture.Rock,
+                    Gesture.Paper,
+                    Gesture.Scissors
                 },
                 new FakeRandomNumberGenerator());
 
-            Assert.AreEqual(Rock, tacticalComputerPlayer.MakeAMove());
+            Assert.AreEqual(Gesture.Rock, tacticalComputerPlayer.MakeAMove());
         }
 
         [Test]
@@ -32,15 +30,15 @@ namespace RockPaperScissors.Tests
             var tacticalComputerPlayer = new TacticalComputerPlayer(
                 new List<Gesture>
                 {
-                    Rock,
-                    Paper,
-                    Scissors
+                    Gesture.Rock,
+                    Gesture.Paper,
+                    Gesture.Scissors
                 },
                 new FakeRandomNumberGenerator());
 
             tacticalComputerPlayer.MakeAMove();
 
-            Assert.AreEqual(Paper, tacticalComputerPlayer.MakeAMove());
+            Assert.AreEqual(Gesture.Paper, tacticalComputerPlayer.MakeAMove());
         }
 
         [Test]
@@ -49,15 +47,15 @@ namespace RockPaperScissors.Tests
             var tacticalComputerPlayer = new TacticalComputerPlayer(
                 new List<Gesture>
                 {
-                    Rock,
-                    Paper
+                    Gesture.Rock,
+                    Gesture.Paper
                 },
                 new FakeRandomNumberGenerator());
 
             tacticalComputerPlayer.MakeAMove();
             tacticalComputerPlayer.MakeAMove();
 
-            Assert.AreEqual(tacticalComputerPlayer.PreviousGesture, Paper);
+            Assert.AreEqual(tacticalComputerPlayer.PreviousGesture, Gesture.Paper);
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
+using RockPaperScissors.Logic.Common;
+using RockPaperScissors.Logic.Players;
 
-using static RockPaperScissors.Logic.RoundResult;
-
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Core
 {
     public class Game : Entity
     {
@@ -60,11 +60,11 @@ namespace RockPaperScissors.Logic
 
         private void UpdateScore(RoundResult result)
         {
-            if (result == PlayerOneWins)
+            if (result == RoundResult.PlayerOneWins)
             {
                 PlayerOneScore += 1;
             }
-            else if (result == PlayerTwoWins)
+            else if (result == RoundResult.PlayerTwoWins)
             {
                 PlayerTwoScore += 1;
             }

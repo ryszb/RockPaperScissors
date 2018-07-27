@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace RockPaperScissors.UI
+namespace RockPaperScissors.UI.Common
 {
     public class ViewModel : INotifyPropertyChanged
     {

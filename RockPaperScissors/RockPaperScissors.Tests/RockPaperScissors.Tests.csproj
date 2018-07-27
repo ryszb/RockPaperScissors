@@ -46,14 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComputerPlayerTests.cs" />
+    <Compile Include="PlayerTests\ComputerPlayerTests.cs" />
     <Compile Include="FakeRandomNumberGenerator.cs" />
-    <Compile Include="GameTests.cs" />
-    <Compile Include="GestureTests.cs" />
-    <Compile Include="HumanPlayerTests.cs" />
+    <Compile Include="CoreTests\GameTests.cs" />
+    <Compile Include="CoreTests\GestureTests.cs" />
+    <Compile Include="PlayerTests\HumanPlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoundTests.cs" />
-    <Compile Include="TacticalComputerPlayerTests.cs" />
+    <Compile Include="CoreTests\RoundTests.cs" />
+    <Compile Include="PlayerTests\TacticalComputerPlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

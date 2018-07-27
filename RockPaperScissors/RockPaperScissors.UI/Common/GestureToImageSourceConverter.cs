@@ -3,10 +3,9 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Media;
+using RockPaperScissors.Logic.Core;
 
-using RockPaperScissors.Logic;
-
-namespace RockPaperScissors.UI
+namespace RockPaperScissors.UI.Common
 {
     public class GestureToImageSourceConverter : IValueConverter
     {

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Utils;
 
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Players
 {
     public class TacticalComputerPlayer : ComputerPlayer
     {

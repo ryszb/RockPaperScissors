@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace RockPaperScissors.UI
+namespace RockPaperScissors.UI.Common
 {
     public class Command<T> : ICommand
     {

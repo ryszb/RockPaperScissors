@@ -1,12 +1,10 @@
 ﻿using System;
-
 using NUnit.Framework;
-
 using RockPaperScissors.Logic;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Players;
 
-using static RockPaperScissors.Logic.Gesture;
-
-namespace RockPaperScissors.Tests
+namespace RockPaperScissors.Tests.PlayerTests
 {
     [TestFixture]
     public class HumanPlayerTests
@@ -22,7 +20,7 @@ namespace RockPaperScissors.Tests
         {
             var humanPlayer = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             Assert.IsTrue(humanPlayer.Ready);
@@ -39,7 +37,7 @@ namespace RockPaperScissors.Tests
         {
             var humanPlayer = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             Assert.AreEqual(humanPlayer.ChosenGesture, humanPlayer.MakeAMove());
@@ -50,12 +48,12 @@ namespace RockPaperScissors.Tests
         {
             var humanPlayer = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             humanPlayer.MakeAMove();
 
-            Assert.AreEqual(humanPlayer.PreviousGesture, Rock);
+            Assert.AreEqual(humanPlayer.PreviousGesture, Gesture.Rock);
         }
     }
 }

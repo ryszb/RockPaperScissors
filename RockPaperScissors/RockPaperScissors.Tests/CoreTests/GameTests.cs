@@ -1,12 +1,9 @@
 ﻿using System;
-
 using NUnit.Framework;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Players;
 
-using RockPaperScissors.Logic;
-
-using static RockPaperScissors.Logic.Gesture;
-
-namespace RockPaperScissors.Tests
+namespace RockPaperScissors.Tests.CoreTests
 {
     [TestFixture]
     public class GameTests
@@ -16,11 +13,11 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 1);
@@ -35,11 +32,11 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             var game = new Game(playerOne, playerTwo, 1);
@@ -54,11 +51,11 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             var game = new Game(playerOne, playerTwo, 1);
@@ -73,18 +70,18 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 3);
             game.Throw();
 
-            playerOne.ChosenGesture = Rock;
-            playerTwo.ChosenGesture = Scissors;
+            playerOne.ChosenGesture = Gesture.Rock;
+            playerTwo.ChosenGesture = Gesture.Scissors;
 
             game.Throw();
 
@@ -96,18 +93,18 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
 
             var game = new Game(playerOne, playerTwo, 3);
             game.Throw();
 
-            playerOne.ChosenGesture = Scissors;
-            playerTwo.ChosenGesture = Rock;
+            playerOne.ChosenGesture = Gesture.Scissors;
+            playerTwo.ChosenGesture = Gesture.Rock;
 
             game.Throw();
 
@@ -120,7 +117,7 @@ namespace RockPaperScissors.Tests
             var playerOne = new HumanPlayer();
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 1);
@@ -133,7 +130,7 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
             var playerTwo = new HumanPlayer();
 
@@ -147,18 +144,18 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Paper
+                ChosenGesture = Gesture.Paper
             };
 
             var game = new Game(playerOne, playerTwo, 1);
             game.Throw();
 
-            playerOne.ChosenGesture = Scissors;
-            playerTwo.ChosenGesture = Paper;
+            playerOne.ChosenGesture = Gesture.Scissors;
+            playerTwo.ChosenGesture = Gesture.Paper;
 
             Assert.IsFalse(game.CanThrow);
         }
@@ -168,18 +165,18 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Paper
+                ChosenGesture = Gesture.Paper
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 1);
             game.Throw();
 
-            playerOne.ChosenGesture = Paper;
-            playerTwo.ChosenGesture = Scissors;
+            playerOne.ChosenGesture = Gesture.Paper;
+            playerTwo.ChosenGesture = Gesture.Scissors;
 
             Assert.IsFalse(game.CanThrow);
         }
@@ -189,11 +186,11 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Paper
+                ChosenGesture = Gesture.Paper
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 3);
@@ -214,16 +211,16 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
             var playerTwo = new HumanPlayer
             {
-                ChosenGesture = Scissors
+                ChosenGesture = Gesture.Scissors
             };
 
             var game = new Game(playerOne, playerTwo, 3);
 
-            Assert.Throws<InvalidOperationException>(() => game.SetPlayerGesture(Rock));
+            Assert.Throws<InvalidOperationException>(() => game.SetPlayerGesture(Gesture.Rock));
         }
 
         [Test]
@@ -232,9 +229,9 @@ namespace RockPaperScissors.Tests
             var playerOne = new HumanPlayer();
 
             var game = new Game(playerOne, new HumanPlayer(), 3);
-            game.SetPlayerGesture(Rock);
+            game.SetPlayerGesture(Gesture.Rock);
 
-            Assert.AreEqual(playerOne.ChosenGesture, Rock);
+            Assert.AreEqual(playerOne.ChosenGesture, Gesture.Rock);
         }
 
         [Test]
@@ -242,14 +239,14 @@ namespace RockPaperScissors.Tests
         {
             var playerOne = new HumanPlayer
             {
-                ChosenGesture = Rock
+                ChosenGesture = Gesture.Rock
             };
             var playerTwo = new HumanPlayer();
 
             var game = new Game(playerOne, playerTwo, 3);
-            game.SetPlayerGesture(Rock);
+            game.SetPlayerGesture(Gesture.Rock);
 
-            Assert.AreEqual(playerTwo.ChosenGesture, Rock);
+            Assert.AreEqual(playerTwo.ChosenGesture, Gesture.Rock);
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using RockPaperScissors.Logic.Common;
 
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Core
 {
     public class Gesture : ValueObject<Gesture>
     {

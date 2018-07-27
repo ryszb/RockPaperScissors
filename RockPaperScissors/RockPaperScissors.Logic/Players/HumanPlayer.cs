@@ -1,6 +1,7 @@
 ﻿using System;
+using RockPaperScissors.Logic.Core;
 
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Players
 {
     public class HumanPlayer : Player
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Utils
 {
     public class RandomNumberGenerator : IRandomNumberGenerator
     {

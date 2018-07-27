@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 
 using RockPaperScissors.Logic;
-
-using static RockPaperScissors.Logic.Gesture;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Players;
+using RockPaperScissors.Logic.Utils;
+using RockPaperScissors.UI.Common;
+using static RockPaperScissors.Logic.Core.Gesture;
 using static RockPaperScissors.UI.PlayerType;
 
 namespace RockPaperScissors.UI

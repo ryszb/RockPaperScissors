@@ -1,4 +1,4 @@
-﻿namespace RockPaperScissors.Logic
+﻿namespace RockPaperScissors.Logic.Common
 {
     public class Entity
     {

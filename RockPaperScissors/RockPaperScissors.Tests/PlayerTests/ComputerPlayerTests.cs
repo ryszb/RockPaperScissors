@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-
 using NUnit.Framework;
-
 using RockPaperScissors.Logic;
+using RockPaperScissors.Logic.Core;
+using RockPaperScissors.Logic.Players;
 
-using static RockPaperScissors.Logic.Gesture;
-
-namespace RockPaperScissors.Tests
+namespace RockPaperScissors.Tests.PlayerTests
 {
     [TestFixture]
     public class ComputerPlayerTests
@@ -17,12 +15,12 @@ namespace RockPaperScissors.Tests
             var computerPlayer = new ComputerPlayer(
                 new List<Gesture>
                 {
-                    Rock,
-                    Paper
+                    Gesture.Rock,
+                    Gesture.Paper
                 },
                 new FakeRandomNumberGenerator());
 
-            Assert.AreEqual(Rock, computerPlayer.MakeAMove());
+            Assert.AreEqual(Gesture.Rock, computerPlayer.MakeAMove());
         }
 
         [Test]
@@ -31,14 +29,14 @@ namespace RockPaperScissors.Tests
             var computerPlayer = new ComputerPlayer(
                 new List<Gesture>
                 {
-                    Rock,
-                    Paper
+                    Gesture.Rock,
+                    Gesture.Paper
                 },
                 new FakeRandomNumberGenerator());
 
             computerPlayer.MakeAMove();
 
-            Assert.AreEqual(computerPlayer.PreviousGesture, Rock);
+            Assert.AreEqual(computerPlayer.PreviousGesture, Gesture.Rock);
         }
     }
 }

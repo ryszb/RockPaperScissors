@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RockPaperScissors.UI"
+        xmlns:common="clr-namespace:RockPaperScissors.UI.Common"
         mc:Ignorable="d"
         Title="Rock, Paper, Scissors"
         Width="550"
@@ -14,7 +15,7 @@
     </Window.DataContext>
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
-        <local:GestureToImageSourceConverter x:Key="GestureToImageSource"/>
+        <common:GestureToImageSourceConverter x:Key="GestureToImageSource"/>
     </Window.Resources>
 
     <Grid Margin="20">

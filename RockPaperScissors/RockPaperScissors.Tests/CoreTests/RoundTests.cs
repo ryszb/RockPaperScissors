@@ -1,13 +1,8 @@
 ﻿using System.Collections;
-
 using NUnit.Framework;
+using RockPaperScissors.Logic.Core;
 
-using RockPaperScissors.Logic;
-
-using static RockPaperScissors.Logic.Gesture;
-using static RockPaperScissors.Logic.RoundResult;
-
-namespace RockPaperScissors.Tests
+namespace RockPaperScissors.Tests.CoreTests
 {
     [TestFixture]
     public class RoundTests
@@ -16,9 +11,9 @@ namespace RockPaperScissors.Tests
         {
             get
             {
-                yield return new TestCaseData(Paper, Scissors).Returns(PlayerTwoWins);
-                yield return new TestCaseData(Paper, Rock).Returns(PlayerOneWins);
-                yield return new TestCaseData(Rock, Rock).Returns(Draw);
+                yield return new TestCaseData(Gesture.Paper, Gesture.Scissors).Returns(RoundResult.PlayerTwoWins);
+                yield return new TestCaseData(Gesture.Paper, Gesture.Rock).Returns(RoundResult.PlayerOneWins);
+                yield return new TestCaseData(Gesture.Rock, Gesture.Rock).Returns(RoundResult.Draw);
             }
         }
 

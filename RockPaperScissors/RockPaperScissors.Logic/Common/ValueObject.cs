@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace RockPaperScissors.Logic
+namespace RockPaperScissors.Logic.Common
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {
